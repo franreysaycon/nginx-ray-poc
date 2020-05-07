@@ -14,3 +14,11 @@ services:
     volumes:
       # So that Traefik can listen to the Docker events
       - /var/run/docker.sock:/var/run/docker.sock
+  ray-dashboard:
+    image: ray-dashboard
+    container_name: fsaycon-ray-dashboard
+    build: ray-dashboard
+    ports:
+      - 8000:8000
+    volumes: 
+      - ./ray-dashboard:/app
