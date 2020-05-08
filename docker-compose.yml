@@ -19,6 +19,8 @@ services:
     container_name: fsaycon-ray-dashboard
     build: ray-dashboard
     ports:
-      - 8000:8000
+      - 8265:8265
     volumes: 
       - ./ray-dashboard:/app
+    shm_size: '2gb'
+    env_file: ./ray-dashboard/.env
