@@ -8,4 +8,5 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 RUN pip3 install ray[dashboard] psutil setproctitle
 WORKDIR /app
 COPY ./initialize_ray_dashboard.py /app
+EXPOSE 8265
 CMD ray start --head --block --webui-host 0.0.0.0
